@@ -104,7 +104,8 @@ public class CardDeliveryChangeDateTest {
         $("[data-test-id=phone] input").setValue("+7912000");
         $(".checkbox__box").click();
         $(".button").click();
-        $("[data-test-id=phone].input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."), Duration.ofSeconds(10));
+        $("[data-test-id=success-notification] .notification__title").shouldHave(exactText("Успешно!"), Duration.ofSeconds(20));
+        $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + planingDate), Duration.ofSeconds(10));
     }
 
     @Test
