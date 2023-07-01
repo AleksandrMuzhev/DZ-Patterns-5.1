@@ -33,13 +33,13 @@ public class CardDeliveryChangeDateTest {
         $("[data-test-id=phone] input").setValue(phone);
         $(".checkbox__box").click();
         $(".button").click();
-        $("[data-test-id=success-notification] .notification__title").shouldBe(visible, Duration.ofSeconds(20));
-        $("[data-test-id=success-notification]").shouldBe(exist, Duration.ofSeconds(40));
+        $("[data-test-id=success-notification] .notification__title").shouldHave(exactText("Успешно!"), Duration.ofSeconds(20));
+        $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + planingDate), Duration.ofSeconds(10));
         $(".calendar-input__custom-control input").doubleClick().sendKeys(changeDate);
         $(".button").click();
         $("[data-test-id=replan-notification] .notification__title").shouldHave(exactText("Необходимо подтверждение"));
         $("[data-test-id=replan-notification] button").click();
-        $("[data-test-id=success-notification] .notification__title").shouldHave(exactText("Успешно!"), Duration.ofSeconds(20));
+        $("[data-test-id=success-notification] .notification__title").shouldHave(exactText("Успешно!"), Duration.ofSeconds(40));
         $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + changeDate), Duration.ofSeconds(10));
     }
 
