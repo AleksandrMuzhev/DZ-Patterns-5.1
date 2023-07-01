@@ -11,7 +11,7 @@ import java.util.Locale;
 public class DataGenerator {
     private static Faker faker = new Faker(new Locale("ru"));
     private static final List<String> cities = Arrays.asList(
-            "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Нижний Новгород"
+            "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Нижний Новгород", "Тюмень"
     );
 
     public static String generateCity() {
